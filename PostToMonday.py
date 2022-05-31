@@ -1,15 +1,16 @@
 import requests, json, time
 import xlwings as xl
 from xlwings.utils import rgb_to_int
+import cfig
 
 # xlwings documentation: https://docs.xlwings.org/en/stable/index.html
 
-apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjExMjQyNTE2OCwidWlkIjoxOTY3MDc2MCwiaWFkIjoiMjAyMS0wNi0wM1QyMjowMzozMy4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6NDMzODY1LCJyZ24iOiJ1c2UxIn0.bPO7_2J7dPYaD5-Xiu0mT6_eqg9iphKcdpxz14mjsX0"
-apiUrl = "https://api.monday.com/v2"
-headers = {"Authorization": apiKey}
+apiKey = cfig.apiKey
+apiUrl = cfig.apiUrl
+headers = cfig.headers
+real_board_id = cfig.real_board_id
 
-
-real_board_id = '1269455955'  # Change this value if the board needs to change
+  # Change this value if the board needs to change
 
 
 def datapull():  # This function is to pull data from excel models
@@ -117,4 +118,4 @@ def post():
         print("Something is not working correctly")
 
 
-post()
+#post()
